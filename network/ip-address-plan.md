@@ -43,10 +43,10 @@ Internet
 VyOS Router
    │
    ├──────── Infrastructure Network (Servers)
-   │           10.30.10.0/24
+   │           10.30.20.0/24
    │
    └──────── Client Network (Workstations)
-               10.30.20.0/24
+               10.30.10.0/24
 ```
 
 ---
@@ -103,9 +103,9 @@ This network hosts all **core enterprise infrastructure services**.
 
 | Parameter | Value |
 |----------|------|
-| Network | 10.30.10.0/24 |
+| Network | 10.30.20.0/24 |
 | Subnet Mask | 255.255.255.0 |
-| Gateway | 10.30.10.1 |
+| Gateway | 10.30.20.1 |
 | DNS Servers | DC1, DC2 |
 
 ---
@@ -114,15 +114,15 @@ This network hosts all **core enterprise infrastructure services**.
 
 | Hostname | Role | IP Address |
 |---------|------|-----------|
-| DC1 | Primary Domain Controller | 10.30.10.10 |
-| DC2 | Secondary Domain Controller | 10.30.10.11 |
-| FS1 | File Server | 10.30.10.20 |
-| PS1 | Print Server | 10.30.10.21 |
-| WSUS1 | Patch Management | 10.30.10.30 |
-| APP1 | Intranet Web Server | 10.30.10.40 |
-| HELPDESK1 | Ticketing System | 10.30.10.50 |
-| LOG1 | Central Logging Server | 10.30.10.60 |
-| BACKUP1 | Backup Server | 10.30.10.70 |
+| DC1 | Primary Domain Controller | 10.30.20.10 |
+| DC2 | Secondary Domain Controller | 10.30.20.11 |
+| FS1 | File Server | 10.30.20.20 |
+| PS1 | Print Server | 10.30.20.21 |
+| WSUS1 | Patch Management | 10.30.20.30 |
+| APP1 | Intranet Web Server | 10.30.20.40 |
+| HELPDESK1 | Ticketing System | 10.30.20.50 |
+| LOG1 | Central Logging Server | 10.30.20.60 |
+| BACKUP1 | Backup Server | 10.30.20.70 |
 
 ---
 
@@ -132,10 +132,10 @@ The client network contains domain-joined workstation systems.
 
 | Parameter | Value |
 |----------|------|
-| Network | 10.30.20.0/24 |
+| Network | 10.30.10.0/24 |
 | Subnet Mask | 255.255.255.0 |
-| Gateway | 10.30.20.1 |
-| DNS Servers | 10.30.10.10, 10.30.10.11 |
+| Gateway | 10.30.10.1 |
+| DNS Servers | 10.30.20.10, 10.30.20.11 |
 
 ---
 
@@ -160,10 +160,10 @@ The DHCP scope distributes IP addresses to workstation systems on the client net
 
 | Parameter | Value |
 |----------|------|
-| Scope Network | 10.30.20.0/24 |
-| DHCP Range | 10.30.20.100 – 10.30.20.200 |
+| Scope Network | 10.30.10.0/24 |
+| DHCP Range | 10.30.10.100 – 10.30.10.200 |
 | Subnet Mask | 255.255.255.0 |
-| Default Gateway | 10.30.20.1 |
+| Default Gateway | 10.30.10.1 |
 | DNS Servers | 10.30.10.10, 10.30.10.11 |
 | Domain Name | corp.lab |
 
@@ -175,7 +175,7 @@ Infrastructure and reserved addresses are excluded from DHCP allocation.
 
 | Exclusion Range | Purpose |
 |----------------|--------|
-| 10.30.20.1 – 10.30.20.99 | Reserved infrastructure and static assignments |
+| 10.30.10.1 – 10.30.10.99 | Reserved infrastructure and static assignments |
 
 This ensures DHCP only distributes addresses within the designated client range.
 
