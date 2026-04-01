@@ -27,7 +27,7 @@ The environment simulates a small company with approximately 50 employees and in
 
 ## Infrastructure Diagram
 
-![Infrastructure Architecture](diagrams/infrastructure-architecture.png)
+![alt text](diagram/winlab-diagram.png)
 
 ---
 
@@ -42,7 +42,7 @@ The environment simulates a small company with approximately 50 employees and in
 | Patch Management | WSUS |
 | Web Services | IIS |
 | Logging | Windows Event Forwarding |
-| Ticketing | GLPI / osTicket / Zammad |
+| Ticketing | GLPI  |
 | Backup | Windows Server Backup |
 | Hybrid Identity | Azure AD Connect |
 
